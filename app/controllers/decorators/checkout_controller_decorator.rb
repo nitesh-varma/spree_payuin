@@ -1,6 +1,6 @@
 # Copyright 2013 ThoughtWorks, Inc. Licensed under the Apache License, Version 2.0.
 Spree::CheckoutController.class_eval do
-  skip_before_filter :verify_authenticity_token,:ensure_valid_state, :only=> [:callback]
+  skip_before_action :verify_authenticity_token,:ensure_valid_state, :only=> [:callback]
 
   def callback
     @order = Spree::Order.find_by_number params[:productinfo]
